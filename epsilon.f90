@@ -1,15 +1,14 @@
-program machine_epsilon_half
+program machine_epsilon_double
     implicit none
-    integer, parameter :: half = selected_real_kind(3, 4)
-    real(kind=half) :: epsilon
+    real(kind=8) :: epsilon
 
-    epsilon = 1.0_half
+    epsilon = 1.0_8
 
-    do while (1.0_half + epsilon /= 1.0_half)
-        epsilon = epsilon / 2.0_half
+    do while (1.0_8 + epsilon /= 1.0_8)
+        epsilon = epsilon / 2.0_8
     end do
 
-    epsilon = epsilon * 2.0_half
+    epsilon = epsilon * 2.0_8
 
     print *, 'The machine epsilon (half precision) is:', epsilon
-end program machine_epsilon_half
+end program machine_epsilon_double
