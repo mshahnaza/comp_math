@@ -1,0 +1,18 @@
+program integral
+    real r,S,b,a,pi,rnd
+    integer M,i
+    pi=4.D0*DATAN(1.D0)
+    a=pi
+    b=(3*pi)/2
+    M=1000
+    S=0
+    i=0
+    do while(i<M)
+     call random_number(rnd)
+     r=(b-a)*rnd+a
+     S=sin(r)+S
+     i=i+1
+     print *,'iteration №',i,' S=',S/i
+    end do
+    print *,'Last: total integral=',(b-a)*S/M
+   end program integral
