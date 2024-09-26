@@ -12,7 +12,7 @@ program integral
      r=(b-a)*rnd+a
      S=sin(r)+S
      i=i+1
-     print *,'iteration №',i,' S=',S/i
+     print *,'iteration №',i,' S=',(b-a)*S/i
     end do
     print *,'Last: total integral=',(b-a)*S/M
    end program integral
