@@ -1,0 +1,27 @@
+program darbu
+  real a(10),lsd,usd,x,x_l,x_r,pi,a,b,max,min
+  integer n,m
+  lsd=0.0
+  usd=0.0
+  m=0
+  pi=4.D0*DATAN(1.D0)
+  
+  a=pi
+  b=(3*pi)/2
+  print *, "Enter number of intervals: "
+  read *,n
+  x=(b-a)/n
+  do i=0,n
+   x_l=a+i*x
+   x_r=a+(i+1)*x
+   do i=x_l,x_r,((x_r-x_l)/10)
+    a(m)=i
+    m=m+1
+   end do
+   min=MINVAL(a)
+   max=MAXVAL(a)
+   lsd=lsd+(min*(x_r-x_l))
+   usd=usd+(max*(x_r-x_l))
+  end do
+  
+end program darbu
