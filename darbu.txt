@@ -1,0 +1,28 @@
+program darbu
+  real lsd,usd,x,x_l,x_r,pi,a,b,max,min
+  integer n
+  lsd=0.0
+  usd=0.0
+  pi=4.D0*DATAN(1.D0)
+  
+  a=pi
+  b=(3*pi)/2
+  print *, "Enter number of intervals: "
+  read *,n
+  x=(b-a)/n
+  do i=0,n
+   x_l=a+i*x
+   x_r=a+(i+1)*x
+   if(sin(x_l)<sin(x_r)) then
+    min=sin(x_l)
+    max=sin(x_r)
+   else 
+    min=sin(x_r)
+    max=sin(x_l)
+   end if
+   lsd=lsd+(min*(x_r-x_l))
+   usd=usd+(max*(x_r-x_l))
+   print *,'LSD = ',lsd
+   print *,'USD = ',usd
+  end do
+end program darbu
