@@ -1,0 +1,21 @@
+program machine_epsilon_double
+    real(8) epsilon
+    integer n
+    n = 0
+    epsilon = 1.0
+
+
+    do while(1.0 + epsilon > 1.0) 
+     epsilon = epsilon / 2.0
+        
+    end do
+    epsilon = epsilon * 2.0
+    print *, 'The machine epsilon (double precision) is: ', epsilon
+    
+    epsilon = 1.0
+    do while(1.0 + epsilon > 1.0)
+     n = n + 1
+     epsilon = epsilon / 10.0
+    end do
+    print *, 'n is: ',n
+end program machine_epsilon_double
