@@ -1,0 +1,14 @@
+program machine_infinity
+    real L, result
+
+    L = 1.0
+
+    do while(2.0 * L > L)
+        result = L
+        L = L * 2.0
+    end do
+    
+    L = L * 2.0
+
+    print *, 'The machine infinity is:', result
+end program machine_infinity
